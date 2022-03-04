@@ -1,0 +1,115 @@
+
+.todos1 {
+
+	width: 70%;
+	height: 50%;
+	margin-left: 15%;
+	text-align: left;
+	/* background-color: transparent; */
+	border-radius: 3px;
+}
+
+.todos2 {
+
+	width: 70%;
+	height: 20%;
+	margin-left: 15%;
+	text-align: left;
+	background-color: transparent;
+	border-radius: 3px;
+}
+
+.todos3 {
+
+	width: 70%;
+	height: 20%;
+	margin-left: 15%;
+	text-align: left;
+	background-color: transparent;
+	border-radius: 3px;
+}
+
+.todos4 {
+
+	width: 70%;
+	height: 20%;
+	margin-left: 15%;
+	text-align: left;
+	background-color: transparent;
+	border-radius: 3px;
+}
+
+.todos5 {
+
+	width: 70%;
+	height: 20%;
+	margin-left: 15%;
+	text-align: left;
+	background-color: transparent;
+	border-radius: 3px;
+}
+
+.todos6 {
+
+	width: 70%;
+	height: 20%;
+	margin-left: 15%;
+	text-align: left;
+	background-color: transparent;
+	border-radius: 3px;
+}
+
+
+.todos1close {
+	display: none;
+	background-color: tomato;
+	width: 10%;
+	height: 30px;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.todos2close {
+	display: none;
+	background-color: tomato;
+	width: 10%;
+	height: 30px;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.todos3close {
+	display: none;
+	background-color: tomato;
+	width: 10%;
+	height: 30px;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.todos4close {
+	display: none;
+	background-color: tomato;
+	width: 10%;
+	height: 30px;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.todos5close {
+	display: none;
+	background-color: tomato;
+	width: 10%;
+	height: 30px;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.todos6close {
+	display: none;
+	background-color: tomato;
+	width: 10%;
+	height: 30px;
+	border-radius: 50px;
+	cursor: pointer;
+}
