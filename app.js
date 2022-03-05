@@ -22,84 +22,95 @@ button.addEventListener('click', function()
 		return ;
 	if (i == 0)
 	{
-		list1.innerHTML = inputs.value;
+		list1.innerHTML = "1." + inputs.value;
 		list1_x.style.display = "inline"
 		i++;
 	}
 	else if (i == 1)
 	{
-		list2.innerHTML = inputs.value;
+		list2.innerHTML = "2." + inputs.value;
 		list2_x.style.display = "inline"
 		i++;
 	}
 	else if (i == 2)
 	{
-		list3.innerHTML = inputs.value;
+		list3.innerHTML = "3." + inputs.value;
 		list3_x.style.display = "inline"
 		i++;
 	}
 	else if (i == 3)
 	{
-		list4.innerHTML = inputs.value;
+		list4.innerHTML = "4." + inputs.value;
 		list4_x.style.display = "inline"
+		
 		i++;
 	}
 	else if (i == 4)
 	{
-		list5.innerHTML = inputs.value;
+		list5.innerHTML = "5." + inputs.value;
 		list5_x.style.display = "inline"
 		i++;
 	}
 	else if (i == 5)
 	{
-		list6.innerHTML = inputs.value;
+		list6.innerHTML = "6." + inputs.value;
 		list6_x.style.display = "inline"
 		i++;
 	}
 	else if (i > 5)
 	{
 		i = 6;
-		alert("no more space you need to delete of to-do's");
+		alert("no more space you need to delete some to-do's");
 	}
 });
 
-function deleteTodos(j) {
-	// if (i == 1)
-	// {
-
-	// }
-	// else if (i == 2)
-	// {
-
-	// }
-	// else if (i == 3)
-	// {
-
-	// }
-	// else if (i == 4)
-	// {
-
-	// }
-	// else if (i == 5)
-	// {
-
-	// }
-	if (j == 6)
+function deleteTodos() {
+	if (i == 1)
 	{
-		console.log("ana hna");
+		list1_x.style.display = "none";
+		list1.innerHTML = "";
+		i--;
+	}
+	else if (i == 2)
+	{
+		list2_x.style.display = "none";
+		list2.innerHTML = "";
+		i--;
+	}
+	else if (i == 3)
+	{
+		list3_x.style.display = "none";
+		list3.innerHTML = "";
+		i--;
+	}
+	else if (i == 4)
+	{
+		list4_x.style.display = "none";
+		list4.innerHTML = "";
+		i--;
+	}
+	else if (i == 5)
+	{
+		list5_x.style.display = "none";
+		list5.innerHTML = "";
+		i--;
+	}
+	if (i == 6)
+	{
 		list6_x.style.display = "none";
-		list6.innerHTML = "0";
+		list6.innerHTML = "";
+		i--;
 	}
 }
 
-list1_x.addEventListener('click', deleteTodos(i));
+list1_x.addEventListener('click', deleteTodos);
 
-list2_x.addEventListener('click', deleteTodos(i));
+list2_x.addEventListener('click', deleteTodos);
 
-list3_x.addEventListener('click', deleteTodos(i));
+list3_x.addEventListener('click', deleteTodos);
 
-list4_x.addEventListener('click', deleteTodos(i));
+list4_x.addEventListener('click', deleteTodos);
 
-list5_x.addEventListener('click', deleteTodos(i));
+list5_x.addEventListener('click', deleteTodos);
 
-list6_x.addEventListener('click', deleteTodos(i));
+list6_x.addEventListener('click', deleteTodos);
