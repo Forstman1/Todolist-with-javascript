@@ -52,7 +52,6 @@ app.get('/api/:user/:password', async (req, res) => {
     res.end()
 })
 
-// INSERT INTO users (name, email, password) VALUES("sami", "hello", "test")
 
 let postData = (user, email, password) => {
     connection.query(`INSERT INTO users (name, email, password) VALUES('${user}', '${email}', '${password}')`, (err, result) => {
