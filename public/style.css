@@ -1,11 +1,11 @@
 .big-container {
-	display: grid;
+	display: none;
 	grid-template-columns: repeat(1, 100%);
 	width: 60%;
 	height: 800px;
 	background-color: blanchedalmond;
 	margin-left: 23%;
-	margin-top: 30%;
+	margin-top: 100px;
 	align-items: center;
 	text-align: center;
 	font-family: 'Barlow', sans-serif;
@@ -92,6 +92,59 @@
 	background-color: tomato;
 	width: 10%;
 	height: 30px;
-	border-radius: 50px;
+	border-radius: 5px;
 	cursor: pointer;
 }
+
+.icon {
+	display: flex;
+	justify-content: end;
+	cursor: pointer;
+}
+
+.image {
+	width: 50px;
+	height: 50px;
+}
+
+.login {
+	display: grid;
+	align-items: center;
+	text-align: center;
+	margin-top: 10%;
+	margin-left: 30%;
+	width: 50%;
+	height: 500px;
+	font-family: 'Barlow', sans-serif;
+	background-color: blanchedalmond;
+	font-size: 20px;
+	border-radius: 8px;
+}
+
+.register {
+	font-size: 25px;
+	font-weight: bold;
+	cursor: pointer;
+	color: black;
+}
+
+
+.register:hover {
+	color: blue;
+}
+
+.sign {
+	width: 150px;
+	height: 30px;
+	text-decoration: none;
+	border-radius: 3px;
+	font-size: 20px;
+	border: 0;
+	background-color: blue;
+	color: white;
+	cursor: pointer;
+}
+
+/* #sign:hover {
+
+} */
