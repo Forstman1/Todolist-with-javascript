@@ -41,6 +41,15 @@ let getData = async (user, password) =>
             object.password = result[0].password
             object.email = result[0].email
             object.status = "true"
+            object.id = result[0].id
+            connection.query(`SELECT * FROM todos WHERE (note_id) LIKE '${object.id}'`, async (err, result) => {
+                let j = 0;
+                while (result[j])
+                {
+                    object.notes.push(result[j].note)
+                    j++;
+                }
+            })
         }
     })
 }
@@ -49,25 +58,64 @@ app.get('/api/:user/:password', async (req, res) => {
 
     await getData(req.params.user, req.params.password)
     res.json(object)
+    object = {
+        name : "",
+        password : "",
+        status : "false",
+        id : -1,
+        notes : []
+    }
     res.end()
 })
 
 
-let postData = (user, email, password) => {
+let postUser = (user, email, password) => {
     connection.query(`INSERT INTO users (name, email, password) VALUES('${user}', '${email}', '${password}')`, (err, result) => {
-        console.log(result)
     })
 }
 
+let postNote = (note, id) => {
+    connection.query(`INSERT INTO todos (note, note_id) VALUES('${note}', '${id}')`, (err, result) => {
+    })
+}
+
+let DeleteNote = (note, id) => {
+    connection.query(`DELETE FROM todos WHERE note = '${note}' && note_id = '${id}'`, (err, result) => {
+    })
+}
 
 app.post('/api/:email/:user/:password', (req, res) => {
 
-    postData(req.params.user, req.params.email, req.params.password)
+    postUser(req.params.user, req.params.email, req.params.password)
     console.log(object.name, object.password, object.email)
     res.json(object)
+    object = {
+        name : "",
+        password : "",
+        status : "false",
+        id : -1,
+        notes : []
+    }
     res.end()
 })
 
-app.listen(3000, ()=> {
+
+
+app.post('/api/:note/:id', (req, res) => {
+    postNote(req.params.note, req.params.id)
+    res.end()
+})
+
+
+
+app.delete('/api/delete/:note/:id', (req, res) => {
+    DeleteNote(req.params.note, req.params.id)
+    res.end()
+})
+
+
+
+app.listen(3000, () => {
     console.log("server running on port 3000")
 })
+
