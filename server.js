@@ -31,7 +31,6 @@ app.use(urlencoded({extended: true}))
 
 let getData = async (user, password) => 
 {
-
     connection.query(`SELECT * FROM users WHERE (name) LIKE '${user}' && (password) LIKE '${password}'`, async (err, result) => {
         if (!result[0])
             object.status = "false"

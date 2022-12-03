@@ -78,7 +78,7 @@ signin.addEventListener('click', async function()
 					list.splice(t, 1)
 			i--;
 		})
-	i++
+		i++
 	}
 });
 
