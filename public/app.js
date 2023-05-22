@@ -35,52 +35,52 @@ let checkvalid = () => {
 	return false;
 }
 
-signin.addEventListener('click', async function()
-{
-	event.preventDefault()
-	if (checkvalid())
-		return 
-	const api = await fetch('http://localhost:3000/api/' + username.value + '/' + password.value)
-	const respond = await api.json()
-	console.log(respond)
-	object = respond
-	if (respond.status == "false")
-	{
-		alert("The login or password you entered is wrong")
-		return 
-	}
-	big_container.style.display = "grid"
-	login.style.display = "none"
-	const annoncementElement = document.createElement('div')
-	annoncementElement.textContent = "Welcome back " + respond.name
-	annoncementElement.className = "text-header"
-	annoncement.appendChild(annoncementElement)
-	const test = respond.notes
-	for (let i = 0; i < test.length; i++)
-		list.push(test[i])
-	for (let j = 0; j < list.length; j++)
-	{
-		const newElement = document.createElement('li')
-		const deleteNode = document.createElement('div')
-		newElement.textContent = list[j]
-		deleteNode.append("x")
-		deleteNode.className = 'todosclose'
-		newElement.className = 'todos'
-		todos.appendChild(newElement);
-		todos.appendChild(deleteNode)
-		deleteNode.addEventListener('click', ()=>
-		{
-			DeleteNoteFromDatabase(newElement.textContent, object.id)
-			todos.removeChild(newElement)
-			todos.removeChild(deleteNode)
-			for (let t = 0; t < list.length; t++)
-				if (list[t] == newElement.textContent)
-					list.splice(t, 1)
-			i--;
-		})
-		i++
-	}
-});
+// signin.addEventListener('click', async function()
+// {
+// 	event.preventDefault()
+// 	if (checkvalid())
+// 		return 
+// 	const api = await fetch('http://localhost:3000/api/' + username.value + '/' + password.value)
+// 	const respond = await api.json()
+// 	console.log(respond)
+// 	object = respond
+// 	if (respond.status == "false")
+// 	{
+// 		alert("The login or password you entered is wrong")
+// 		return 
+// 	}
+// 	big_container.style.display = "grid"
+// 	login.style.display = "none"
+// 	const annoncementElement = document.createElement('div')
+// 	annoncementElement.textContent = "Welcome back " + respond.name
+// 	annoncementElement.className = "text-header"
+// 	annoncement.appendChild(annoncementElement)
+// 	const test = respond.notes
+// 	for (let i = 0; i < test.length; i++)
+// 		list.push(test[i])
+// 	for (let j = 0; j < list.length; j++)
+// 	{
+// 		const newElement = document.createElement('li')
+// 		const deleteNode = document.createElement('div')
+// 		newElement.textContent = list[j]
+// 		deleteNode.append("x")
+// 		deleteNode.className = 'todosclose'
+// 		newElement.className = 'todos'
+// 		todos.appendChild(newElement);
+// 		todos.appendChild(deleteNode)
+// 		deleteNode.addEventListener('click', ()=>
+// 		{
+// 			DeleteNoteFromDatabase(newElement.textContent, object.id)
+// 			todos.removeChild(newElement)
+// 			todos.removeChild(deleteNode)
+// 			for (let t = 0; t < list.length; t++)
+// 				if (list[t] == newElement.textContent)
+// 					list.splice(t, 1)
+// 			i--;
+// 		})
+// 		i++
+// 	}
+// });
 
 
 let addNoteToDataBase = async () => {
@@ -109,7 +109,7 @@ button.addEventListener('click', function()
 		alert("no more space delete some of todos")
 		return ;
 	}
-	addNoteToDataBase()
+	// addNoteToDataBase()
 	list.push(inputs.value)
 	const newElement = document.createElement('li')
 	const deleteNode = document.createElement('div')
@@ -138,30 +138,30 @@ const email = document.querySelector('.email')
 const title = document.querySelector('.title')
 
 
-signupstuff.addEventListener('click', function() {
-	emailstuff.style.display = "inline"
-	signin.style.display = "none"
-	signup.style.display = "inline"
-	title.textContent = "register"
-})
+// signupstuff.addEventListener('click', function() {
+// 	emailstuff.style.display = "inline"
+// 	signin.style.display = "none"
+// 	signup.style.display = "inline"
+// 	title.textContent = "register"
+// })
 
-signup.addEventListener('click', async function() {
-	event.preventDefault()
-	if (checkvalid())
-		return ;
-	const api = await fetch('http://localhost:3000/api/' + email.value + '/' + username.value + '/' + password.value, {
-		method: 'POST'
-	})
-	const respond = await api.json()
-	if (!respond.status)
-	{
-		alert("The login or password you entered is invalid")
-		return 
-	}
-	big_container.style.display = "grid"
-	login.style.display = "none"
-	const annoncementElement = document.createElement('div')
-	annoncementElement.textContent = "Welcome " + username.value
-	annoncementElement.className = "text-header"
-	annoncement.appendChild(annoncementElement)
-})
+// signup.addEventListener('click', async function() {
+// 	event.preventDefault()
+// 	if (checkvalid())
+// 		return ;
+// 	const api = await fetch('http://localhost:3000/api/' + email.value + '/' + username.value + '/' + password.value, {
+// 		method: 'POST'
+// 	})
+// 	const respond = await api.json()
+// 	if (!respond.status)
+// 	{
+// 		alert("The login or password you entered is invalid")
+// 		return 
+// 	}
+// 	big_container.style.display = "grid"
+// 	login.style.display = "none"
+// 	const annoncementElement = document.createElement('div')
+// 	annoncementElement.textContent = "Welcome " + username.value
+// 	annoncementElement.className = "text-header"
+// 	annoncement.appendChild(annoncementElement)
+// })

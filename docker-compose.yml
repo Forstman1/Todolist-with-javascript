@@ -4,8 +4,8 @@ services:
   app:
     build : .
     ports:
-      - "3000:3000"
+      - "4000:3000"
     volumes:
-      - ./Mysql:/var/lib/mysql
+      # - ./Mysql:/var/lib/mysql
       - .:/home/app
-    # restart: always
+    restart: always

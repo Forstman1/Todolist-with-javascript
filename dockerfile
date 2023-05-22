@@ -2,7 +2,8 @@ FROM node
 
 COPY . /home/app
 
-RUN apt upgrade -y && apt update -y && apt install mariadb-server -y && apt install systemctl -y && systemctl enable mariadb && service mariadb start
+RUN  apt update -y && apt upgrade -y 
+# RUN npm install mysql
 
 WORKDIR /home/app
 
